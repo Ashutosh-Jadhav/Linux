@@ -20,6 +20,7 @@ int main()
     printf("after how much sec to run the script : \n");
     scanf("%d",&i);
     if(!fork()) {
+	setsid();
         chdir("/");
         umask(0);
         while(1){

@@ -27,4 +27,4 @@ int main(void){
 
 }
 
-// The funtion takes 2926 nano sec
+// The `funtion takes 2926 nano sec

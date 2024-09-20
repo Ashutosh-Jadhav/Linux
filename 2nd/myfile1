@@ -1,0 +1,20 @@
+total 92
+drwxrwxr-x 4 ashutosh ashutosh  4096 Sep 19 17:27 ./
+drwxrwxr-x 3 ashutosh ashutosh  4096 Sep 17 15:38 ../
+-rw-rw-r-- 1 ashutosh ashutosh   311 Sep 12 15:37 14.c
+-rw-rw-r-- 1 ashutosh ashutosh   403 Sep 16 20:55 15.c
+-rw-rw-r-- 1 ashutosh ashutosh   669 Sep 17 11:05 16.c
+-rw-rw-r-- 1 ashutosh ashutosh   374 Sep 17 15:19 17.c
+-rw-rw-r-- 1 ashutosh ashutosh   633 Sep 19 17:25 18.c
+-rw-rw-r-- 1 ashutosh ashutosh   588 Sep 12 09:12 1.c
+-rw-rw-r-- 1 ashutosh ashutosh  1349 Sep 18 15:14 2.c
+-rw-rw-r-- 1 ashutosh ashutosh    76 Sep 19 09:01 30.c
+-rw-rw-r-- 1 ashutosh ashutosh   537 Sep 19 10:47 33.c
+-rw-rw-r-- 1 ashutosh ashutosh   324 Sep 11 18:01 3.c
+-rw-rw-r-- 1 ashutosh ashutosh   740 Sep 18 15:28 4.c
+-rwxrwxr-x 1 ashutosh ashutosh 16208 Sep 19 17:25 a.out*
+drwxrwxr-x 2 ashutosh ashutosh  4096 Sep 19 09:26 hi/
+-rw-rw-r-- 1 ashutosh ashutosh     0 Sep 19 17:27 myfile1
+drwxrwxr-x 2 ashutosh ashutosh  4096 Sep 17 17:52 tp/
+-rw-rw-r-- 1 ashutosh ashutosh   138 Sep 19 17:23 tp.c
+-rw-r--r-- 1 ashutosh ashutosh 12288 Sep 19 17:25 .tp.c.swp
