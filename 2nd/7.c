@@ -1,6 +1,6 @@
 /*
 ============================================================================
-Name : 7.c
+Name : 17a.c
 Author : Ashutosh Jadhav
 Description : 7. Write a simple program to print the created thread ids.
 Date: 18th Sep, 2024.

@@ -1,42 +1,44 @@
+
 /*
 ============================================================================
-Name : 1a.c
+Name : 1c.c
 Author : Ashutosh Jadhav
 Description : 1. Write a separate program (for each time domain) to set a interval timer in 10sec and
 10micro second
-a. ITIMER_REAL
+c. ITIMER_PROF
 Date: 18th Sep, 2024.
 ============================================================================
 */
 
 #include <stdio.h>
-#include <sys/time.h>
-#include <signal.h>
 #include <unistd.h>
-void my_handler()
+#include <signal.h>
+#include <stdlib.h>
+#include <sys/time.h>
+
+void my_handler(int sig)
 {
-	printf("signal milra hai 10sec 10 micro sec ke baad, nice one \n");
+	printf("recieved %d : SIGPROF \n",sig);
 }
 
 int main()
 {
+    int ret;
 	//struct itimerval val;
 	struct itimerval val2;
-	signal(14,my_handler);
-	int ret ;
+	signal(27,my_handler);
 	val2.it_interval.tv_sec = 10;
 	val2.it_interval.tv_usec = 10;
 	val2.it_value.tv_sec = 10;
 	val2.it_value.tv_usec = 10 ;
-	//printf("%ld \n",val.it_interval.tv_sec);
-	//printf("%ld \n",val.it_interval.tv_usec);
-	ret = setitimer(ITIMER_REAL,&val2,NULL);
-	perror("");
-	//alarm(3);
-	printf("%d\n",ret);
-	//signal(14,my_handler);
+	ret = setitimer(ITIMER_PROF,&val2,NULL);
 	while(1)
 	{
-		//signal(14,my_handler);
 	}
 }
+
+/*
+./a.out
+recieved 27 : SIGPROF 
+recieved 27 : SIGPROF 
+*/

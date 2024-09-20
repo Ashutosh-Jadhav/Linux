@@ -16,7 +16,8 @@ int main(int argc, char *argv[])
 	int fd1, fd2, newfd;
 	fd1 = open(argv[1],O_RDWR);
 	fd2 = open(argv[2],O_RDONLY);
-	newfd = fcntl(fd1,F_DUPFD, 3);
+	newfd = fcntl(fd1,F_DUPFD);
+	perror("");
 	printf("%d\n",newfd);
 	write(fd1,"Again Hi!",9);
 	write(newfd,"Nah bro! not you again",22);

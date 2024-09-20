@@ -1,30 +1,33 @@
 /*
 ============================================================================
-Name : 8.c
+Name : 10b.c
 Author : Ashutosh Jadhav
-Description : 8. Write a separate program using signal system call to catch the following signals.
-a. SIGSEGV
+Description : 10. Write a separate program using sigaction system call to catch the following signals.
+b. SIGINT
 Date: 18th Sep, 2024.
 ============================================================================
 */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <signal.h>
 #include <stdlib.h>
 void my_handler()
 {
-	printf("Catched SIGSEGV\n");
+	printf("Catched SIGINT\n");
 	exit(0);
 }
 
 int main()
 {
 	int i,j;
-	signal(11,my_handler);
-	scanf("%d",(int *)i);
+    struct sigaction s;
+    s.sa_handler = my_handler;
+	sigaction(2,&s,NULL);
+    while(1){}
 }
 
-/* ./a.out
-9
-Catched SIGSEGV
+/*
+./a.out
+^CCatched SIGINT
 */

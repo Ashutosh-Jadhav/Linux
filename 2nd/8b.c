@@ -1,30 +1,29 @@
 /*
 ============================================================================
-Name : 8.c
+Name : 8b.c
 Author : Ashutosh Jadhav
 Description : 8. Write a separate program using signal system call to catch the following signals.
-a. SIGSEGV
+b. SIGint
 Date: 18th Sep, 2024.
 ============================================================================
 */
 #include <stdio.h>
-#include <unistd.h>
 #include <signal.h>
+#include <unistd.h>
 #include <stdlib.h>
-void my_handler()
+void my_handler(int sig)
 {
-	printf("Catched SIGSEGV\n");
+	printf("recieved signal %d\n",sig);
 	exit(0);
 }
 
 int main()
 {
-	int i,j;
-	signal(11,my_handler);
-	scanf("%d",(int *)i);
+	signal(2,my_handler);
+	while(1);
 }
 
-/* ./a.out
-9
-Catched SIGSEGV
+/*
+ * ./a.out
+^Crecieved signal 2
 */
