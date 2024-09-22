@@ -12,7 +12,7 @@ int main()
 	struct sockaddr_in serv ;
 	int sd = socket(AF_INET, SOCK_STREAM, 0);
 	serv.sin_family = AF_INET ;
-	serv.sin_addr.s_addr = inet_addr("172.16.138.95");
+	serv.sin_addr.s_addr = inet_addr("");
 	serv.sin_port = htons(6006);
 	connect(sd,(void *)&serv,sizeof(serv));
 	write(sd,"hey server\n",11);
