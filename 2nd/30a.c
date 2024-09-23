@@ -19,11 +19,6 @@ Date: 20th Sep, 2024.
 
 int main()
 {
-
-    struct {
-        int i ;
-    }db;
-    db.i = 10 ;
     int key, shm ;
     char *p ;
     key = ftok(".",'a');
