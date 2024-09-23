@@ -1,8 +1,10 @@
 /*
 ============================================================================
-Name : 26.c
+Name : 27a.c
 Author : Ashutosh Jadhav
-Description : 26. Write a program to send messages to the message queue. Check $ipcs -q
+Description : 27. Write a program to receive messages from the message queue.
+a. with 0 as a flag
+b. with IPC_NOWAIT as a flag
 Date: 20th Sep, 2024.
 ============================================================================
 */
@@ -14,7 +16,7 @@ Date: 20th Sep, 2024.
 #include <sys/types.h>
 #include <string.h>
 
-int main(void)
+int main()
 {
     int msgid ;
     int size ;
@@ -25,22 +27,20 @@ int main(void)
         char message[80] ;
     }mq;
 
-
     key = ftok(".",'a');
     msgid = msgget(key,0);
 
-    printf("Enter the message type : ");
+    printf("Enter the message type to recieve: ");
     scanf("%ld",&mq.mtype);
 
-    printf("Enter the message text : ");
-
-    scanf(" %[^\n]",mq.message);
-    size = strlen(mq.message);
-
-    msgsnd(msgid,  &mq, size+1,0);
+    msgrcv(msgid,  &mq, sizeof(mq.message),mq.mtype,0);
+    printf("message type : %ld\n",mq.mtype);
+    printf("message text : %s\n",mq.message);
 }
+
 /*
 ./a.out
-Enter the message type : 10
-Enter the message text : hi there
+Enter the message type to recieve: 10
+message type : 10
+message text : hi there
 */

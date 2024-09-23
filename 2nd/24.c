@@ -24,5 +24,4 @@ int main()
     printf("key value in hex = 0x%0x \n",key);
     printf("message queue id = %d\n",msgid);
     printf("pid : %d",getpid());
-    while(1);
 }
