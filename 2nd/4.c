@@ -30,3 +30,8 @@ int main(){
 	nano = (end - start)/2.09 ;
 	printf("time taken : %2f nano sec\n",nano);
 }
+
+/*
+./a.out
+time taken : 17340.669922 nano sec
+*/

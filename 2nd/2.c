@@ -1,3 +1,12 @@
+/*
+============================================================================
+Name : 2.c
+Author : Ashutosh Jadhav
+Description : 2. Write a program to print the system resource limits. Use getrlimit system call.
+Date: 18th Sep, 2024.
+============================================================================
+*/
+
 #include <stdio.h>
 #include <sys/resource.h>
 
@@ -50,3 +59,19 @@ int main()
 	}
 	
 }
+
+
+/*
+./a.out
+Success
+message queue limits..
+Soft limit : 819200
+Hard limit : 819200
+No limit on maximum size of the process's virtual memory
+limit on maximum size of core file...
+Soft limit : 0
+Hard Limit : -1 
+no limit on the amount of cpu time that the process can consume
+no limit on maximum size of files that the process may create
+no limit on the size of the process data segment
+*/

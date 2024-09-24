@@ -14,24 +14,38 @@ Date: 20th Sep, 2024.
 #include <unistd.h>
 #include <sys/select.h>
 
-int main(){
-    int fd = open("myfifo1",O_RDWR);
-    int offset=0;
-    char buf[1024];
-    fd_set rfds;
-    FD_ZERO(&rfds);
-    FD_SET(0,&rfds);
-    struct timeval t;
-    t.tv_sec = 10;
-    t.tv_usec=0;
-    printf("Enter within  10 secs \n");
-    int ret = select(fd,&rfds,0,0,&t);
-    if(ret &&  FD_ISSET(0,&rfds)){
-        offset= read(0,buf,sizeof(buf));
+int main(void)
+{
+    char buf[3];
+    int retval,fd ;
+    fd_set wrfds ;
+    struct timeval tv ;
+    fd = open("myfifo",O_WRONLY);
+    FD_ZERO(&wrfds);
+    FD_SET(fd , &wrfds);
+
+    tv.tv_sec = 10 ;
+    tv.tv_usec = 0 ;
+
+    retval = select(2,NULL,&wrfds,NULL,&tv);
+    perror("");
+    printf("ho gaya \n");
+    // read(0,buf,sizeof(buf));
+    write(fd,"hi",2);
+
+    if (retval)
+    {
+        printf("data was avilable... \n");
     }
-    else{
-        printf("Sorry timeout\n");
-        exit(0);
+    else 
+    {
+        printf("no data within 10 secs...\n");
     }
-    printf("%s\n",buf);
+
 }
+/*
+ ./a.out
+Success
+ho gaya 
+no data within 10 secs...
+*/

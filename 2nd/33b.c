@@ -18,23 +18,27 @@ Date: 21th Sep, 2024.
 
 int main()
 {
-	char buf[1024];
-	struct sockaddr_in serv ;
-	int sd = socket(AF_UNIX, SOCK_STREAM, 0);
+    struct sockaddr_in serv, cli ;
+    int sd, sz, nsd ;
+    char buf[80];
+    sd = socket(AF_UNIX,SOCK_STREAM,0);
 
-	serv.sin_family = AF_UNIX ;
-	serv.sin_addr.s_addr = INADDR_ANY;
-	serv.sin_port = htons(6030);
+    serv.sin_family = AF_UNIX ;
+    serv.sin_addr.s_addr = INADDR_ANY ;
+    serv.sin_port = htons(6006);
 
-	connect(sd,(void *)&serv,sizeof(serv));
-	write(sd,"hey server\n",11);
-	read(sd,&buf,sizeof(buf));
-	printf("msg from server : %s\n",buf);
-	getchar();
-	close(sd);
+    bind(sd,(void *) &serv, sizeof(serv));
+
+    listen(sd,5);
+    sz = sizeof(cli);
+    nsd = accept(sd,(void *) &cli,&sz);
+    read(nsd,buf,sizeof(buf));
+    printf("message from client : %s\n",buf);
+    write(nsd,"ACK from server\n",17);
 }
 
 /*
 ./a.out
-msg from server : ACK from server
+message from client : hey server
+
 */

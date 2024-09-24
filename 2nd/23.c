@@ -16,5 +16,11 @@ Date: 18th Sep, 2024.
 int main()
 {
     printf("max number of open files : %ld\n",sysconf(_POSIX_OPEN_MAX));
-    
+    printf("size of a pipe : %ld\n",pathconf(".",_PC_PIPE_BUF));
 }
+
+/*
+./a.out
+max number of open files : 200809
+size of a pipe : 4096
+*/

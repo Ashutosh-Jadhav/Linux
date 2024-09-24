@@ -3,5 +3,5 @@
 #include <unistd.h>
 int main(int argc, char *argv[])
 {
-	execl("/usr/bin/grep","grep","^d",argv[1],NULL);
+	execl("/usr/bin/grep","grep","^d",NULL);
 }

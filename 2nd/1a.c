@@ -40,3 +40,11 @@ int main()
 		//signal(14,my_handler);
 	}
 }
+
+/*
+ ./a.out
+Success
+0
+signal milra hai 10sec 10 micro sec ke baad, nice one 
+signal milra hai 10sec 10 micro sec ke baad, nice one 
+*/
