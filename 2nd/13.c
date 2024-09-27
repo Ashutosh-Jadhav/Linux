@@ -29,3 +29,11 @@ int main()
     printf("waiting for SIG_STOP signal\n");
     while(1){}
 }
+
+/*
+./a.out
+pid : 138254
+waiting for SIG_STOP signal
+
+[1]+  Stopped         
+*/

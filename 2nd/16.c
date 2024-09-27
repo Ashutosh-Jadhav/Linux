@@ -1,3 +1,13 @@
+/*
+============================================================================
+Name : 16.c
+Author : Ashutosh Jadhav
+Description : 16. Write a program to send and receive data from parent to child vice versa. Use two way
+communication.
+Date: 14th Sep, 2024.
+============================================================================
+*/
+
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -33,3 +43,11 @@ int main()
 	}
 }
 
+
+/*
+./a.out
+Enter i to send to child : 8
+received i from parent , now doubling it...
+sending to parent ...
+child gives ans : 16 
+*/

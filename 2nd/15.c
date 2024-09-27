@@ -1,3 +1,11 @@
+/*
+============================================================================
+Name : 15.c
+Author : Ashutosh Jadhav
+Description : 15. Write a simple program to send some data from parent to the child process.
+Date: 14th Sep, 2024.
+============================================================================
+*/
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -21,3 +29,9 @@ int main()
 		write(fd[1],&i,sizeof(int));
 	}
 }
+
+/*
+./a.out
+enter data to send to child : 6
+data recieved successfully : 6
+*/

@@ -25,3 +25,10 @@ int main()
     printf("message queue id = %d\n",msgid);
     printf("pid : %d",getpid());
 }
+
+/*
+./a.out
+key value = 1627521520
+key value in hex = 0x610201f0 
+message queue id = 0
+*/
