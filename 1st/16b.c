@@ -14,14 +14,14 @@ Date: 31th Aug, 2024.
 int main(int argc,char *argv[]){
         struct flock lck ;
         int fd ;
-        fd = open(argv[1],O_RDWR);
+        fd = open(argv[1],O_RDONLY);
         lck.l_start = 0;
         lck.l_len = 0 ;
         lck.l_type = F_RDLCK;
         lck.l_whence = SEEK_SET;
         lck.l_pid = getpid();
         printf("before entering into the critical section \n");
-        fcntl(fd,F_SETLK,&lck);
+        fcntl(fd,F_SETLKW,&lck);
         printf("Inside the critical section... \n");
         printf("Enter l to unlock..\n");
         char c= getchar();

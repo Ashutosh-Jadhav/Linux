@@ -35,7 +35,7 @@ int main()
     lseek(fd1,(train-1)*sizeof(db),SEEK_SET);
     read(fd1,&db,sizeof(db));
     printf("before entering into critical section...\n");
-    fcntl(fd1,F_SETLK,&lock);
+    fcntl(fd1,F_SETLKW,&lock);
     printf("ticket number : %d\n",db.ticket_no);
     printf("to exit press a key \n");
     getchar();

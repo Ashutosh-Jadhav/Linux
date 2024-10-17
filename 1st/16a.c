@@ -26,7 +26,7 @@ int main(int argc,char *argv[]){
         printf("Enter l to unlock..\n");
         char c= getchar();
         if(c=='l'){ lck.l_type= F_UNLCK;}
-        fcntl(fd,F_SETLKW,&lck);
+        fcntl(fd,F_SETLK,&lck);
         printf("unlocked\n");
         printf("finish \n");
 }
